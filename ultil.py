@@ -13,7 +13,7 @@ from sklearn.ensemble import RandomForestClassifier
 
 
 def plot_confusion(test, input_pred):
-    df_cm = pd.DataFrame(confusion_matrix(test, input_pred), range(1,len(test)), range(1,len(test)))
+    df_cm = pd.DataFrame(confusion_matrix(test, input_pred), range(1,test.nunique() + 1), range(1,test.nunique() + 1))
     # plt.figure(figsize=(10,7))
     sns.set(font_scale=1.4)  # for label size
     sns.heatmap(df_cm, annot=True, cmap='PuRd')  # font size
